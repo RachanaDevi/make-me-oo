@@ -27,22 +27,22 @@ However, his trainer told him that what he did is not Object Oriented programmin
 - Try to articulate problems with Shivam's OOP solution. (Write it somewhere and share it with your trainer)
 - Fork the project and fix the design related problem with Shivam's OOP solution. Share that with your trainer too.
 
-###Articulation
+#### Articulation
 - Shivam has created DistanceAndDirectionCalculator class which interacts with the calculation of a Point's direction and distance from another point. Hence Encapsulation is missing, as Point related info is not bundled together.
 - Point class just has been used for initializing, getting and setting the Point's coordinates. There is no real behaviour mentioned in it.
 - Even though x and y are private. They can be seen using getters, which doesn't implement Data-Hiding.
 
-###How I solved it
+#### How I solved it
 - I added distanceFrom and directionFrom Point methods in Point class because it justifies information related to Point.
 - Removed DistanceAndDirectionCalculator class so as to encapsulate calculation related to Point in Point class itself.
 - Removed getters and setters.
 
-###Where the 4 pillars are present
+#### Where the 4 pillars are present
 - Abstraction is present as the user doesn't know how a Point's distance, direction from another point is calculated.
 - Encapsulation is present as data and behaviour related to Point are closely bundled together.
 - Inheritance and Polymorphism are not present.
 
-###Doubts
+#### Doubts
 - There is repetition of code in directionFrom and distanceFrom, i.e calculating x_diff and y_diff.
 ```
     public double distanceFrom(Point point){
