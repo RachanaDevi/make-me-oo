@@ -10,15 +10,19 @@ public class Point {
     }
 
     public double distanceFrom(Point point){
-        double x_diff = point.x - this.x;
-        double y_diff = point.y - this.y;
-        return Math.sqrt(Math.pow(x_diff,2)+Math.pow(y_diff,2));
+        Point diff = this.delta(point);
+        return Math.sqrt(Math.pow(diff.x,2)+Math.pow(diff.y,2));
     }
 
     public double directionFrom(Point point){
-        double x_diff = point.x - this.x;
-        double y_diff = point.y - this.y;
-        return Math.atan2(y_diff,x_diff);
+        Point diff = this.delta(point);
+        return Math.atan2(diff.y,diff.x);
+    }
+
+    private Point delta(Point point){
+        double xDiff = point.x - this.x;
+        double yDiff = point.y - this.y;
+        return new Point(xDiff,yDiff);
     }
 
 }
