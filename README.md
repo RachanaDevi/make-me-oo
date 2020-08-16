@@ -27,6 +27,8 @@ However, his trainer told him that what he did is not Object Oriented programmin
 - Try to articulate problems with Shivam's OOP solution. (Write it somewhere and share it with your trainer)
 - Fork the project and fix the design related problem with Shivam's OOP solution. Share that with your trainer too.
 
+---
+
 #### Articulation
 - Shivam has created DistanceAndDirectionCalculator class which interacts with the calculation of a Point's direction and distance from another point. Hence Encapsulation is missing, as Point related info is not bundled together.
 - Point class just has been used for initializing, getting and setting the Point's coordinates. There is no real behaviour mentioned in it.
@@ -42,9 +44,9 @@ However, his trainer told him that what he did is not Object Oriented programmin
 - Encapsulation is present as data and behaviour related to Point are closely bundled together.
 - Inheritance and Polymorphism are not present.
 
-#### Doubts
+#### Doubts [SOLVED]
 - There is repetition of code in directionFrom and distanceFrom, i.e calculating x_diff and y_diff.
-```
+```java
     public double distanceFrom(Point point){
         double x_diff = point.x - this.x; //repetition
         double y_diff = point.y - this.y; //repetition
@@ -58,7 +60,7 @@ However, his trainer told him that what he did is not Object Oriented programmin
     }
 ```
 - I felt if it was done the following way given below, repetition could have been avoided. But returning a Point from differenceInCoordinateValues didn't make sense to me in technicality as difference of two points doesn't return a point. 
-```
+```java
 package org.oop;
 
 public class Point {
@@ -74,6 +76,7 @@ public class Point {
         Point diff = this.differenceInCoordinateValues(point);
         return Math.atan2(diff.y,diff.x);
     }
+
     // New method
     public Point differenceInCoordinateValues(Point point){
         double x_diff = point.x - this.x;
